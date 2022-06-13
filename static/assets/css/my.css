@@ -1,0 +1,63 @@
+.desc{
+    width: 100%;
+    height: 50%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+element.style {
+}
+
+#header-container .navi .userbox > li {
+    margin-left: 40px;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.vtop {
+    vertical-align: top;
+}
+.inlblk {
+    display: -moz-inline-box;
+    display: inline-block;
+    zoom: 1;
+}
+li {
+    list-style: none;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, sub, sup, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+#header-container .navi .userbox {
+    font-size: 14px;
+    margin-top: 26px;
+    padding: 0 40px 0 0;
+    margin-left: 0 !important;
+    cursor: default;
+}
+
+ul {
+    list-style-type: disc;
+}
+.wrapper, #header-container #searchMyaccountBox, #footer-container .sitepopularbox__wrapper {
+    text-align: left;
+    width: 1238px;
+    font-size: 12px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+body, input, textarea, select, option, optgroup, button {
+    font-family: "Arial", Helvetica, sans-serif;
+}

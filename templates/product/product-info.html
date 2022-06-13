@@ -1,0 +1,730 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>Hexashop - Product Detail Page</title>
+
+
+    <!-- Additional CSS Files -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'assetss/css/bootstrap.min.css' %}"> -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'assetss/css/font-awesome.css' %}"> -->
+
+    <!-- <link rel="stylesheet" href="{% static 'assetss/css/templatemo-hexashop.css' %}"> -->
+
+    <!-- <link rel="stylesheet" href="{% static 'assetss/css/owl-carousel.css' %}"> -->
+
+    <!-- <link rel="stylesheet" href="{% static 'assetss/css/lightbox.css' %}"> -->
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/my.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my.css' %}">
+   <style>/*
+
+    TemplateMo 571 Hexashop
+    
+    https://templatemo.com/tm-571-hexashop
+    
+    */
+    
+    /* ---------------------------------------------
+    Table of contents
+    ------------------------------------------------
+    01. font & reset css
+    02. reset
+    03. global styles
+    04. header
+    05. banner
+    06. features
+    07. testimonials
+    08. contact
+    09. footer
+    10. preloader
+    11. search
+    12. portfolio
+    
+    --------------------------------------------- */
+    /* 
+    ---------------------------------------------
+    font & reset css
+    --------------------------------------------- 
+    */
+    @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+    /* 
+    ---------------------------------------------
+    reset
+    --------------------------------------------- 
+    */
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+    pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+    s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+    figure, header, nav, section, article, aside, footer, figcaption {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+    }
+    
+    .clearfix:after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0;
+    }
+    
+    .clearfix {
+      display: inline-block;
+    }
+    
+    html[xmlns] .clearfix {
+      display: block;
+    }
+    
+    * html .clearfix {
+      height: 1%;
+    }
+    
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    
+    header, nav, section, article, aside, footer, hgroup {
+      display: block;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      background-color: #fff;
+      font-size: 16px;
+      -ms-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    a {
+      text-decoration: none !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    
+    ul {
+      margin-bottom: 0px;
+    }
+    
+    p {
+      font-size: 14px;
+      line-height: 25px;
+      color: #2a2a2a;
+    }
+    
+    
+    
+    /* 
+    ---------------------------------------------
+    Single Product Page
+    --------------------------------------------- 
+    */
+    
+    #product {
+      margin-top: 80px;
+    }
+    
+    #product .left-images img {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    
+    #product .right-content {
+      position: relative;
+      z-index: 3;
+      background-color: #fff;
+    }
+    
+    #product .right-content h4 {
+      font-size: 22px;
+      color: #2a2a2a;
+      font-weight: 700;
+      margin-bottom: 0px;
+    }
+    
+    #product .right-content span.price {
+      font-size: 18px;
+      color: #a1a1a1;
+      font-weight: 500;
+      display: block;
+      margin-top: 5px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    
+    #product .right-content ul.stars {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+    #product .right-content ul.stars li {
+      display: inline;
+      font-size: 13px;
+    }
+    
+    #product .right-content span {
+      font-size: 14px;
+      color: #aaaaaa;
+      font-weight: 500;
+      display: block;
+      margin-top: 25px;
+    }
+    
+    #product .right-content .quote {
+      margin-top: 25px;
+    }
+    
+    #product .right-content .quote i {
+      float: left;
+      font-size: 32px;
+      margin-right: 15px;
+      margin-top: 10px;
+    }
+    
+    #product .right-content .quote p {
+      font-style: italic;
+      color: #2a2a2a;
+      font-weight: 500;
+    }
+    
+    #product .right-content p {
+      font-size: 14px;
+      color: #aaaaaa;
+      font-weight: 500;
+      display: block;
+      margin-top: 25px;
+    }
+    
+    .quantity-content {
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      width: 100%;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .quantity-content .left-content {
+      float: left;
+      margin-right: 30px;
+    }
+    
+    .quantity-content .right-content {
+      text-align: right;
+    }
+    
+    .quantity-content .left-content h6 {
+      padding-top: 7px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #aaa;
+      position: relative;
+      z-index: 11;
+    }
+    
+    .total h4 {
+      float: left;
+      font-size: 20px;
+      margin-top: 10px;
+      color: #aaa!important;
+    }
+    
+    .total .main-border-button {
+      text-align: right;
+    }
+    
+    .total .main-border-button a {
+      border-color: #2a2a2a;
+      color: #2a2a2a;
+    }
+    
+    .total .main-border-button a:hover {
+      color: #fff;
+      background-color: #2a2a2a;
+    }
+    
+    .quantity {
+      display: inline-block; }
+     
+     .quantity .input-text.qty {
+      width: 35px;
+      height: 39px;
+      padding: 0 5px;
+      text-align: center;
+      background-color: transparent;
+      border: 1px solid #efefef;
+     }
+     
+     .quantity.buttons_added {
+      text-align: left;
+      position: relative;
+      white-space: nowrap;
+      vertical-align: top; }
+     
+     .quantity.buttons_added input {
+      display: inline-block;
+      margin: 0;
+      vertical-align: top;
+      box-shadow: none;
+     }
+     
+     .quantity.buttons_added .minus,
+     .quantity.buttons_added .plus {
+      padding: 7px 10px 8px;
+      height: 39px;
+      background-color: #ffffff;
+      border: 1px solid #efefef;
+      cursor:pointer;}
+     
+     .quantity.buttons_added .minus {
+      border-right: 0; }
+     
+     .quantity.buttons_added .plus {
+      border-left: 0; }
+     
+     .quantity.buttons_added .minus:hover,
+     .quantity.buttons_added .plus:hover {
+      background: #eeeeee; }
+     
+     .quantity input::-webkit-outer-spin-button,
+     .quantity input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      margin: 0; }
+      
+      .quantity.buttons_added .minus:focus,
+     .quantity.buttons_added .plus:focus {
+      outline: none; }
+    
+      footer {
+margin-top: 60px;
+padding: 60px 0px 30px 0px;
+background-color: #2a2a2a;
+}
+
+footer .logo {
+margin-bottom: 20px;
+}
+
+footer ul li {
+display: block;
+margin-bottom: 10px;
+}
+
+footer ul li a {
+font-size: 14px;
+color: #fff;
+transition: all .3s;
+}
+
+footer ul li a:hover {
+color: #aaa;
+}
+
+footer h4 {
+letter-spacing: 0.5px;
+font-size: 16px;
+color: #fff;
+font-weight: 700;
+margin-bottom: 20px;
+}
+
+footer .under-footer {
+margin-top: 30px;
+padding-top: 30px;
+text-align: center;
+border-top: 1px solid rgba(250,250,250,0.3);
+}
+
+footer .under-footer ul {
+margin-top: 20px;
+}
+
+footer .under-footer ul li {
+display: inline-block;
+margin: 0px 10px;
+}
+
+footer .under-footer ul li a {
+font-size: 22px;
+}
+
+footer .under-footer p {
+color: #fff;
+font-size: 14px;
+font-weight: 300;
+}
+
+footer .under-footer a {
+color: #cff;
+}
+
+footer .under-footer a:hover {
+color: #c66;
+}
+    </style>
+    
+<!--
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/home/">
+                    <h2>Sixteen <em>Clothing</em></h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/">Home
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/products/">Our Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact/">Contact Us</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile/{{user.id}}/">{{user.username}}</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'sign_up' %}">Profile</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h4>new arrivals</h4>
+                        <h2>sixteen products</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ***** Preloader Start ***** -->
+    <!-- <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div> -->
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <!-- <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">-->
+    <!-- ***** Logo Start ***** -->
+    <!-- <a href="index.html" class="logo">
+        <img src="{% static 'assetss/images/logo.png' %}">
+    </a> -->
+    <!-- ***** Logo End ***** -->
+    <!-- ***** Menu Start ***** -->
+    <!-- <ul class="nav">
+                            <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Men's</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>
+                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Pages</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Features</a>
+                                <ul>
+                                    <li><a href="#">Features Page 1</a></li>
+                                    <li><a href="#">Features Page 2</a></li>
+                                    <li><a href="#">Features Page 3</a></li>
+                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>-->
+    <!-- ***** Menu End ***** -->
+    <!--</nav>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+
+    <!-- <div class="page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>Single Product Page</h2>
+                        <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ***** Main Banner Area End ***** -->
+
+
+    <!-- ***** Product Area Starts ***** -->
+    <section class="section" id="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="left-images">
+                        <img src="{{product.image.url}}" alt="">
+                        <!-- <img src="{% static 'assetss/images/single-product-02.jpg' %}" alt=""> -->
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="right-content">
+                        <h4>{{product.product_title}}</h4>
+                        <span class="price">${{ product.price }}</span>
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <!-- <span>{{ product.description }}</span> -->
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>{{ product.description }}</p>
+                        </div>
+                        <div class="quantity-content">
+                            <div class="left-content">
+                                <h6>No. of Orders</h6>
+                            </div>
+                            <div class="right-content">
+                                <div class="quantity buttons_added">
+                                    <input id="inText" type="button" value="-" class="minus"><input id="inText type="
+                                        number" step="1" min="1" max="" name="quantity" value="1" title="Qty"
+                                        class="input-text qty text" size="4" pattern="" inputmode=""><input
+                                        type="button" value="+" id="inText" class="plus">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <div id="output">
+                                <h4 id="display">
+                                    <li>Total price: ${{ product.price}}</li>
+                                </h4>
+                            </div>
+                            <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Product Area Ends ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <p style="color:aliceblue;">Copyright © 2020 Sixteen Clothing Co., Ltd.
+
+                            - Design: <a rel="nofollow noopener" href="https://templatemo.com"
+                                target="_blank">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="{% static 'assetss/images/white-logo.png' %}" alt="hexashop ecommerce templatemo">
+                        </div>
+                        <ul>
+                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                            <li><a href="#">hexashop@company.com</a></li>
+                            <li><a href="#">010-020-0340</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Men’s Shopping</a></li>
+                        <li><a href="#">Women’s Shopping</a></li>
+                        <li><a href="#">Kid's Shopping</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
+
+                            <br>Design: <a href="https://templatemo.com" target="_parent"
+                                title="free css templates">TemplateMo</a>
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+
+    <!-- jQuery -->
+    <script src="{% static 'assetss/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assetss/js/popper.js' %}"></script>
+    <script src="{% static 'assetss/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assetss/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assetss/js/accordions.js' %}"></script>
+    <script src="{% static 'assetss/js/datepicker.js' %}"></script>
+    <script src="{% static 'assetss/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'assetss/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assetss/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assetss/js/imgfix.min.js' %}"></script>
+    <script src="{% static 'assetss/js/slick.js' %}"></script>
+    <script src="{% static 'assetss/js/lightbox.js' %}"></script>
+    <script src="{% static 'assetss/js/isotope.js' %}"></script>
+    <script src="{% static 'assetss/js/quantity.js' %}"></script>
+
+    <!-- Global Init -->
+    <script src="{% static 'assetss/js/custom.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $("#inText").on("input", function () {
+                $("#output").text($(this).val());
+            });
+        });
+    </script>
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!--
+=========================================================
+ Light Bootstrap Dashboard - v2.0.1
+=========================================================
+
+ Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard
+ Copyright 2019 Creative Tim (https://www.creative-tim.com)
+ Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE)
+
+ Coded by Creative Tim
+
+=========================================================
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
+ {% load static %}
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="utf-8" />
+     <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png' %}">
+     <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+     <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
+     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+         name='viewport' />
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+     <link href="{% static 'css/light-bootstrap-dashboard.css' %}?v=2.0.0 " rel="stylesheet" />
+     <link href="{% static 'css/demo.css' %}" rel="stylesheet" />
+     <link href="{% static 'css/my.css' %}" rel="stylesheet" />
+     <style>
+        input, select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 100%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        .fields {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        </style>
+ </head>
+ 
+ <body>
+     <div class="wrapper">
+         <div class="sidebar" data-color="blue">
+             <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+  
+          Tip 2: you can also add an image using data-image tag
+      -->
+             <div class="sidebar-wrapper">
+                 <div class="logo">
+                     <a href="#" class="simple-text">
+                         Profile
+                     </a>
+                 </div>
+                 <ul class="nav">
+                     <li>
+                         <a class="nav-link" href="/profile/{{ user.id }}/">
+                             <i class="nc-icon nc-chart-pie-35"></i>
+                             <p>Profile information</p>
+                         </a>
+                     </li>
+                     <li>
+                         <a class="nav-link" href="/profile/edit_user_profile/{{ user.id }}/">
+                             <i class="nc-icon nc-circle-09"></i>
+                             <p>Update Profile</p>
+                         </a>
+                     </li>
+                     {% if user.groups.all.0.name == "Seller" %}
+                     <li>
+                        <a class="nav-link" href="/profile/seller-products/{{ user.id }}/">
+                            <i class="nc-icon nc-notes"></i>
+                            <p>Products</p>
+                        </a>
+                    </li>
+                    <li  class="nav-item active">
+                       <a class="nav-link" href="/profile/seller-types/{{ user.id }}/">
+                           <i class="nc-icon nc-paper-2"></i>
+                           <p>Types</p>
+                       </a>
+                   </li>
+                    {% endif %}
+                 </ul>
+             </div>
+         </div>
+         <div class="main-panel">
+             <!-- Navbar -->
+             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                 <div class="container-fluid">
+                     <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-bar burger-lines"></span>
+                         <span class="navbar-toggler-bar burger-lines"></span>
+                         <span class="navbar-toggler-bar burger-lines"></span>
+                     </button>
+                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                         <ul class="nav navbar-nav mr-auto">
+                             <li class="nav-item">
+                                 <a href="#" class="nav-link" data-toggle="dropdown">
+                                     <i class="nc-icon nc-palette"></i>
+                                     <span class="d-lg-none">Dashboard</span>
+                                 </a>
+                             </li>
+                             <li class="dropdown nav-item">
+                                 <a href="/dashboard/notifications/" class="dropdown-toggle nav-link"
+                                     data-toggle="dropdown">
+                                     <i class="nc-icon nc-planet"></i>
+                                     <span class="notification">5</span>
+                                     <span class="d-lg-none">Notification</span>
+                                 </a>
+                                 <ul class="dropdown-menu">
+                                     <a class="dropdown-item" href="/dashboard/notifications/">Notification 1</a>
+                                     <a class="dropdown-item" href="/dashboard/notifications/">Notification 2</a>
+                                     <a class="dropdown-item" href="/dashboard/notifications/">Notification 3</a>
+                                     <a class="dropdown-item" href="/dashboard/notifications/">Notification 4</a>
+                                     <a class="dropdown-item" href="/dashboard/notifications/">Another notification</a>
+                                 </ul>
+                             </li>
+                             <li class="nav-item">
+                                 <a href="#" class="nav-link">
+                                     <i class="nc-icon nc-zoom-split"></i>
+                                     <span class="d-lg-block">&nbsp;Search</span>
+                                 </a>
+                             </li>
+                         </ul>
+                         <ul class="navbar-nav ml-auto">
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#pablo">
+                                     <span class="no-icon">Account</span>
+                                 </a>
+                             </li>
+                             <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="http://example.com"
+                                     id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                     aria-expanded="false">
+                                     <span class="no-icon">Dropdown</span>
+                                 </a>
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                     <a class="dropdown-item" href="#">Action</a>
+                                     <a class="dropdown-item" href="#">Another action</a>
+                                     <a class="dropdown-item" href="#">Something</a>
+                                     <a class="dropdown-item" href="#">Something else here</a>
+                                     <div class="divider"></div>
+                                     <a class="dropdown-item" href="#">Separated link</a>
+                                 </div>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" href="#pablo">
+                                     <span class="no-icon">Log out</span>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+             </nav>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+
+    <!-- Main Content Here -->
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="card o-hidden border-0 shadow-lg my-5 col-lg-5 fields">
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-error">{{ form.non_field_errors }}</div>
+
+                    {% for f in form %}
+                    <p><label class="form-label"
+                            for="{{ f.id_for_label }}">{{f.label}}:&nbsp;&nbsp;&nbsp;</label>{{ f }}</p>
+                    <div class="form-error">{{ f.errors }}</div>
+                    {% endfor %}
+                <center>    
+                    <button type="submit" class="btn btn-success">Create</button>
+                    <a href="/profile/{{ user.id }}"><button type="button" class="btn btn-success">
+                        Back to Profile</button></a>
+                </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
