@@ -59,7 +59,6 @@ class ProductsPageView(ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        # context = {'types' : Type.objects.all()}
         if 'search_text' in self.request.GET:
             result = Product.objects.filter(
                 Q(product_title__icontains=self.request.GET.get('search_text')))
@@ -67,7 +66,13 @@ class ProductsPageView(ListView):
             return result
         else:
             product_page_view(self.request)
-            return Product.objects.all()      
+            return Product.objects.all() 
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['types'] = Type.objects.all()
+        
+        return context
 
     # def get_context_data(self, **kwargs):
     #     if 'search_text' in self.request.GET:
